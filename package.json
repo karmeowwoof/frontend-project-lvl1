@@ -10,6 +10,9 @@
     "type": "module",
     "url": "git+https://github.com/karmeowwoof/frontend-project-lvl1.git"
   },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
