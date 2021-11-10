@@ -1,2 +1,11 @@
 #!/usr/bin/env node
-console.log('Hello, World!')
+
+import { userName } from '../src/cli.js'
+
+
+
+
+console.log(`Hello, ${userName}!`);
+
+
+
