@@ -1,5 +1,5 @@
-const giveRandomNumber = () => {
-    const randomNumber = Math.round(Math.random() * 100);
+const giveRandomNumber = (multiplier = 100) => {
+    const randomNumber = Math.round(Math.random() * multiplier);
     return randomNumber;
 };
 
