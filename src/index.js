@@ -13,8 +13,7 @@ const gameTemplate = (gameRules, giveData) => {
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer.toString()) {
       console.log('Correct!');
-    }
-    else {
+    } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
       return;
     }

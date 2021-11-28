@@ -14,7 +14,7 @@ const giveData = () => {
   const randomNumber1 = giveRandomNumber();
   const randomNumber2 = giveRandomNumber();
   const question = `${randomNumber1} ${randomMathOperation()} ${randomNumber2}`;
-  const correctAnswer = eval(question);
+  const correctAnswer = String(question);
   return [question, correctAnswer];
 };
 
