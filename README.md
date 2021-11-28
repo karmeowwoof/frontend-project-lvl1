@@ -4,17 +4,18 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 ### eslint 
 [![Actions Status](https://github.com/karmeowwoof/frontend-project-lvl1/workflows/lint/badge.svg)](https://github.com/karmeowwoof/frontend-project-lvl1/actions)
+
 ### Brain games
 
-#### These are 5 logical thinking games. Each game asks questions that need to be answered correctly. After three correct answers, the game is over. Wrong answers end the game and are asked to play again.
+These are 5 logical thinking games. Each game asks questions that need to be answered correctly. After three correct answers, the game is over. Wrong answers end the game and are asked to play again.
 
-### Install games
+Install games:
+    1. Clone this repository
 
-### Clone this repository
+    2. Run the command: make install
 
-### Run the command: make install
+    3. Run the command: npm link
 
-### Run the command: npm link
 
 ### Демонстрация геймплея:
 ### brain-even:
