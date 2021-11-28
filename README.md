@@ -7,3 +7,11 @@
 ### Демонстрация геймплея:
 ### brain-even:
 [![asciicast](https://asciinema.org/a/iVsENFYMBADOLVhaG43A4anIt.svg)](https://asciinema.org/a/iVsENFYMBADOLVhaG43A4anIt)
+### brain-calc:
+[![asciicast](https://asciinema.org/a/YKvaJ9XGoOF13V3cUYWtAsvKB.svg)](https://asciinema.org/a/YKvaJ9XGoOF13V3cUYWtAsvKB)
+### brain-gcd:
+[![asciicast](https://asciinema.org/a/e9TvjhL7h27Fy1ko18yDS3BUC.svg)](https://asciinema.org/a/e9TvjhL7h27Fy1ko18yDS3BUC)
+### brain-progression:
+[![asciicast](https://asciinema.org/a/lGcIYKV8OIpui38rapCuXogbs.svg)](https://asciinema.org/a/lGcIYKV8OIpui38rapCuXogbs)
+### brain-prime:
+[![asciicast](https://asciinema.org/a/0M2wsWzBkJIf0ineG6rNAFLyC.svg)](https://asciinema.org/a/0M2wsWzBkJIf0ineG6rNAFLyC)
