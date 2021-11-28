@@ -19,11 +19,11 @@ const randomMathOperation = (num1, num2, operator) => {
 const operators = ['+', '-', '*'];
 
 const giveData = () => {
-  const randomNumber1 = giveRandomNumber();
-  const randomNumber2 = giveRandomNumber();
+  const randNum1 = giveRandomNumber();
+  const randNum2 = giveRandomNumber();
   const randomOperator = giveRandomNumber(3);
-  const question = `${randomNumber1} ${operators[randomOperator]} ${randomNumber2}`;
-  const correctAnswer = String(randomMathOperation(randomNumber1, randomNumber2, operators[randomOperator]));
+  const question = `${randNum1} ${operators[randomOperator]} ${randNum2}`;
+  const correctAnswer = String(randomMathOperation(randNum1, randNum2, operators[randomOperator]));
   return [question, correctAnswer];
 };
 
