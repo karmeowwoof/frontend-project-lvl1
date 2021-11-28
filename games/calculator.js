@@ -3,18 +3,27 @@ import gameTemplate from '../src/index.js';
 
 const gameRules = 'What is the result of the expression?';
 
-const randomMathOperation = () => {
-  const numberOperations = 3;
-  const operationsArr = ['+', '-', '*'];
-  const randomIndex = Math.floor(Math.random() * numberOperations);
-  return operationsArr[randomIndex];
+const randomMathOperation = (num1, num2, operator) => {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default:
+      throw new Error(`operation ${operator} is not supported`);
+  }
 };
+
+const operators = ['+', '-', '*'];
 
 const giveData = () => {
   const randomNumber1 = giveRandomNumber();
   const randomNumber2 = giveRandomNumber();
-  const question = `${randomNumber1} ${randomMathOperation()} ${randomNumber2}`;
-  const correctAnswer = eval(question)
+  const randomOperator = giveRandomNumber(3);
+  const question = `${randomNumber1} ${operators[randomOperator]} ${randomNumber2}`;
+  const correctAnswer = String(randomMathOperation(randomNumber1, randomNumber2, operators[randomOperator]));
   return [question, correctAnswer];
 };
 
