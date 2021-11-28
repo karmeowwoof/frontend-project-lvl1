@@ -10,6 +10,7 @@
 These are 5 logical thinking games. Each game asks questions that need to be answered correctly. After three correct answers, the game is over. Wrong answers end the game and are asked to play again.
 
 Install games:
+
     1. Clone this repository
 
     2. Run the command: make install
