@@ -1,5 +1,5 @@
-import giveRandomNumber from '../src/randomNumber.js';
-import gameTemplate from '../src/index.js';
+import giveRandomNumber from '../randomNumber.js';
+import launchGameLogic from '../index.js';
 
 const gameRules = 'What number is missing in the progression?';
 
@@ -31,6 +31,6 @@ const giveData = () => {
   return [question, correctAnswer];
 };
 
-const startGameProgression = () => gameTemplate(gameRules, giveData);
+const startGameProgression = () => launchGameLogic(gameRules, giveData);
 
 export default startGameProgression;

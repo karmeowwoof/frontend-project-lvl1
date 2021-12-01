@@ -1,5 +1,5 @@
-import giveRandomNumber from '../src/randomNumber.js';
-import gameTemplate from '../src/index.js';
+import giveRandomNumber from '../randomNumber.js';
+import launchGameLogic from '../index.js';
 
 const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -9,6 +9,6 @@ const giveData = () => {
   return [randomNumber, correctAnswer];
 };
 
-const startGameEven = () => gameTemplate(gameRules, giveData);
+const startGameEven = () => launchGameLogic(gameRules, giveData);
 
 export default startGameEven;

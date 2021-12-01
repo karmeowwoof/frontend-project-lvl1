@@ -1,5 +1,5 @@
-import giveRandomNumber from '../src/randomNumber.js';
-import gameTemplate from '../src/index.js';
+import giveRandomNumber from '../randomNumber.js';
+import launchGameLogic from '../index.js';
 
 const gameRules = 'Find the greatest common divisor of given numbers.';
 
@@ -18,6 +18,6 @@ const giveData = () => {
   return [question, correctAnswer];
 };
 
-const startGameGcd = () => gameTemplate(gameRules, giveData);
+const startGameGcd = () => launchGameLogic(gameRules, giveData);
 
 export default startGameGcd;

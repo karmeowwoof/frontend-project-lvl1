@@ -1,5 +1,5 @@
-import giveRandomNumber from '../src/randomNumber.js';
-import gameTemplate from '../src/index.js';
+import giveRandomNumber from '../randomNumber.js';
+import launchGameLogic from '../index.js';
 
 const gameRules = 'What is the result of the expression?';
 
@@ -27,6 +27,6 @@ const giveData = () => {
   return [question, correctAnswer];
 };
 
-const startGameCalc = () => gameTemplate(gameRules, giveData);
+const startGameCalc = () => launchGameLogic(gameRules, giveData);
 
 export default startGameCalc;
