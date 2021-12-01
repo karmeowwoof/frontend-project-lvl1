@@ -1,7 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/karmeowwoof/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/karmeowwoof/frontend-project-lvl1/actions)
 ### CodeClimate;
-[![Maintainability](https://api.codeclimate.com/v1/badges/50b0bd680e3a85eae2366b844f3d4621d4066d99625e8f6864ba099a543d1c27/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/40ce36a154be8ab5ce75/maintainability)](https://codeclimate.com/github/karmeowwoof/frontend-project-lvl1/maintainability)
 ### eslint 
 [![Actions Status](https://github.com/karmeowwoof/frontend-project-lvl1/workflows/lint/badge.svg)](https://github.com/karmeowwoof/frontend-project-lvl1/actions)
 
