@@ -3,7 +3,7 @@ import launchGameLogic from '../index.js';
 
 const gameRules = 'What is the result of the expression?';
 
-const randomMathOperation = (num1, num2, operator) => {
+const randomOperation = (num1, num2, operator) => {
   switch (operator) {
     case '+':
       return num1 + num2;
@@ -19,11 +19,11 @@ const randomMathOperation = (num1, num2, operator) => {
 const operators = ['+', '-', '*'];
 
 const giveData = () => {
-  const randNum1 = giveRandomNumber();
-  const randNum2 = giveRandomNumber();
-  const randomOperator = giveRandomNumber(3);
-  const question = `${randNum1} ${operators[randomOperator]} ${randNum2}`;
-  const correctAnswer = String(randomMathOperation(randNum1, randNum2, operators[randomOperator]));
+  const firstPart = giveRandomNumber();
+  const secondPart = giveRandomNumber();
+  const randomOperator = giveRandomNumber(0, 3);
+  const question = `${firstPart} ${operators[randomOperator]} ${secondPart}`;
+  const correctAnswer = String(randomOperation(firstPart, secondPart, operators[randomOperator]));
   return [question, correctAnswer];
 };
 

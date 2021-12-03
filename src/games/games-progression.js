@@ -22,8 +22,8 @@ const replaceElement = (progression, hiddenIndex) => {
 
 const giveData = () => {
   const startNumber = giveRandomNumber();
-  const hiddenIndex = giveRandomNumber(9);
-  const difference = giveRandomNumber(10);
+  const hiddenIndex = giveRandomNumber(0, 9);
+  const difference = giveRandomNumber(0, 10);
   const progression = createProgression(startNumber, difference);
   const question = replaceElement(progression, hiddenIndex);
   const extractedReplaceElement = startNumber + (difference * hiddenIndex) + difference;
