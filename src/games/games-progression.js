@@ -1,13 +1,16 @@
-import giveRandomNumber from '../randomNumber.js';
+import getRandomNumber from '../randomNumber.js';
 import launchGameLogic from '../index.js';
 
-const gameRules = 'What number is missing in the progression?';
+const gameRule = 'What number is missing in the progression?';
 
-const arithmeticProgressionLength = 11;
+const minCount = 0;
+const maxCount = 10;
+
+const arithmeticProgressionLength = 10;
 
 const createProgression = (number, difference) => {
   const progression = [];
-  for (let i = 1; i < arithmeticProgressionLength; i += 1) {
+  for (let i = 0; i < arithmeticProgressionLength; i += 1) {
     progression.push(number + (i * difference));
   }
   return progression;
@@ -20,17 +23,17 @@ const replaceElement = (progression, hiddenIndex) => {
   return newProgression.join(' ');
 };
 
-const giveData = () => {
-  const startNumber = giveRandomNumber();
-  const hiddenIndex = giveRandomNumber(0, 9);
-  const difference = giveRandomNumber(0, 10);
+const getData = () => {
+  const startNumber = getRandomNumber();
+  const hiddenIndex = getRandomNumber(minCount, maxCount);
+  const difference = getRandomNumber(minCount, maxCount);
   const progression = createProgression(startNumber, difference);
   const question = replaceElement(progression, hiddenIndex);
-  const extractedReplaceElement = startNumber + (difference * hiddenIndex) + difference;
+  const extractedReplaceElement = startNumber + (difference * hiddenIndex);
   const correctAnswer = String(extractedReplaceElement);
   return [question, correctAnswer];
 };
 
-const startGameProgression = () => launchGameLogic(gameRules, giveData);
+const startGameProgression = () => launchGameLogic(gameRule, getData);
 
 export default startGameProgression;

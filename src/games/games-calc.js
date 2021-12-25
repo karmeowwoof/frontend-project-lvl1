@@ -1,7 +1,7 @@
-import giveRandomNumber from '../randomNumber.js';
+import getRandomNumber from '../randomNumber.js';
 import launchGameLogic from '../index.js';
 
-const gameRules = 'What is the result of the expression?';
+const gameRule = 'What is the result of the expression?';
 
 const randomOperation = (num1, num2, operator) => {
   switch (operator) {
@@ -18,15 +18,15 @@ const randomOperation = (num1, num2, operator) => {
 
 const operators = ['+', '-', '*'];
 
-const giveData = () => {
-  const firstPart = giveRandomNumber();
-  const secondPart = giveRandomNumber();
-  const randomOperator = giveRandomNumber(0, 3);
-  const question = `${firstPart} ${operators[randomOperator]} ${secondPart}`;
-  const correctAnswer = String(randomOperation(firstPart, secondPart, operators[randomOperator]));
+const getData = () => {
+  const firstPart = getRandomNumber();
+  const secondPart = getRandomNumber();
+  const randomOperator = operators[getRandomNumber(0, operators.length)];
+  const question = `${firstPart} ${randomOperator} ${secondPart}`;
+  const correctAnswer = String(randomOperation(firstPart, secondPart, randomOperator));
   return [question, correctAnswer];
 };
 
-const startGameCalc = () => launchGameLogic(gameRules, giveData);
+const startGameCalc = () => launchGameLogic(gameRule, getData);
 
 export default startGameCalc;

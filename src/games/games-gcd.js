@@ -1,7 +1,7 @@
-import giveRandomNumber from '../randomNumber.js';
+import getRandomNumber from '../randomNumber.js';
 import launchGameLogic from '../index.js';
 
-const gameRules = 'Find the greatest common divisor of given numbers.';
+const gameRule = 'Find the greatest common divisor of given numbers.';
 
 const calcGcd = (num1, num2) => {
   if (num2 === 0) {
@@ -10,14 +10,14 @@ const calcGcd = (num1, num2) => {
   return calcGcd(num2, num1 % num2);
 };
 
-const giveData = () => {
-  const firstNumber = giveRandomNumber();
-  const secondNumber = giveRandomNumber();
+const getData = () => {
+  const firstNumber = getRandomNumber();
+  const secondNumber = getRandomNumber();
   const question = `${firstNumber} ${secondNumber}`;
   const correctAnswer = calcGcd(firstNumber, secondNumber);
   return [question, correctAnswer];
 };
 
-const startGameGcd = () => launchGameLogic(gameRules, giveData);
+const startGameGcd = () => launchGameLogic(gameRule, getData);
 
 export default startGameGcd;
