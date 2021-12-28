@@ -18,7 +18,7 @@ Install games:
     3. Run the command: npm link
 
 
-### Демонстрация геймплея:
+### Gameplay demonstration:
 ### brain-even:
 [![asciicast](https://asciinema.org/a/iVsENFYMBADOLVhaG43A4anIt.svg)](https://asciinema.org/a/iVsENFYMBADOLVhaG43A4anIt)
 ### brain-calc:

@@ -1,7 +1,9 @@
 import getRandomNumber from '../randomNumber.js';
-import launchGameLogic from '../index.js';
+import { launchGameLogic, roundCount } from '../index.js';
 
-const gameRule = 'What number is missing in the progression?';
+const gameDescription = 'What number is missing in the progression?';
+
+const data = [];
 
 const minCount = 0;
 const maxCount = 10;
@@ -24,16 +26,21 @@ const replaceElement = (progression, hiddenIndex) => {
 };
 
 const getData = () => {
-  const startNumber = getRandomNumber();
-  const hiddenIndex = getRandomNumber(minCount, maxCount);
-  const difference = getRandomNumber(minCount, maxCount);
-  const progression = createProgression(startNumber, difference);
-  const question = replaceElement(progression, hiddenIndex);
-  const extractedReplaceElement = startNumber + (difference * hiddenIndex);
-  const correctAnswer = String(extractedReplaceElement);
-  return [question, correctAnswer];
+  for (let i = 0; i <= roundCount; i += 1) {
+    const startNumber = getRandomNumber();
+    const hiddenIndex = getRandomNumber(minCount, maxCount);
+    const difference = getRandomNumber(minCount, maxCount);
+    const progression = createProgression(startNumber, difference);
+    const question = replaceElement(progression, hiddenIndex);
+    const extractedReplaceElement = startNumber + (difference * hiddenIndex);
+    const correctAnswer = String(extractedReplaceElement);
+    data.push([question, correctAnswer]);
+  }
+  return data;
 };
 
-const startGameProgression = () => launchGameLogic(gameRule, getData);
+getData(roundCount);
+
+const startGameProgression = () => launchGameLogic(gameDescription, data);
 
 export default startGameProgression;

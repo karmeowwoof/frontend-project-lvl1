@@ -1,7 +1,9 @@
 import getRandomNumber from '../randomNumber.js';
-import launchGameLogic from '../index.js';
+import { launchGameLogic, roundCount } from '../index.js';
 
-const gameRule = 'What is the result of the expression?';
+const gameDescription = 'What is the result of the expression?';
+
+const data = [];
 
 const randomOperation = (num1, num2, operator) => {
   switch (operator) {
@@ -19,14 +21,19 @@ const randomOperation = (num1, num2, operator) => {
 const operators = ['+', '-', '*'];
 
 const getData = () => {
-  const firstPart = getRandomNumber();
-  const secondPart = getRandomNumber();
-  const randomOperator = operators[getRandomNumber(0, operators.length)];
-  const question = `${firstPart} ${randomOperator} ${secondPart}`;
-  const correctAnswer = String(randomOperation(firstPart, secondPart, randomOperator));
-  return [question, correctAnswer];
+  for (let i = 0; i <= roundCount; i += 1) {
+    const firstPart = getRandomNumber();
+    const secondPart = getRandomNumber();
+    const randomOperator = operators[getRandomNumber(0, operators.length)];
+    const question = `${firstPart} ${randomOperator} ${secondPart}`;
+    const correctAnswer = String(randomOperation(firstPart, secondPart, randomOperator));
+    data.push([question, correctAnswer]);
+  }
+  return data;
 };
 
-const startGameCalc = () => launchGameLogic(gameRule, getData);
+getData(roundCount);
+
+const startGameCalc = () => launchGameLogic(gameDescription, data);
 
 export default startGameCalc;

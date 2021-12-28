@@ -1,14 +1,21 @@
 import getRandomNumber from '../randomNumber.js';
-import launchGameLogic from '../index.js';
+import { launchGameLogic, roundCount } from '../index.js';
 
-const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
+const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const data = [];
 
 const getData = () => {
-  const randomNumber = getRandomNumber();
-  const correctAnswer = (randomNumber % 2 === 0) ? 'yes' : 'no';
-  return [randomNumber, correctAnswer];
+  for (let i = 0; i <= roundCount; i += 1) {
+    const randomNumber = getRandomNumber();
+    const correctAnswer = (randomNumber % 2 === 0) ? 'yes' : 'no';
+    data.push([randomNumber, correctAnswer]);
+  }
+  return data;
 };
 
-const startGameEven = () => launchGameLogic(gameRule, getData);
+getData(roundCount);
+
+const startGameEven = () => launchGameLogic(gameDescription, data);
 
 export default startGameEven;
