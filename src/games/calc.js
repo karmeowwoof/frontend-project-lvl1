@@ -3,8 +3,6 @@ import { launchGameLogic, roundCount } from '../index.js';
 
 const gameDescription = 'What is the result of the expression?';
 
-const data = [];
-
 const randomOperation = (num1, num2, operator) => {
   switch (operator) {
     case '+':
@@ -20,20 +18,21 @@ const randomOperation = (num1, num2, operator) => {
 
 const operators = ['+', '-', '*'];
 
-const getData = () => {
-  for (let i = 0; i <= roundCount; i += 1) {
-    const firstPart = getRandomNumber();
-    const secondPart = getRandomNumber();
-    const randomOperator = operators[getRandomNumber(0, operators.length)];
-    const question = `${firstPart} ${randomOperator} ${secondPart}`;
-    const correctAnswer = String(randomOperation(firstPart, secondPart, randomOperator));
-    data.push([question, correctAnswer]);
-  }
-  return data;
+const makeRounds = () => {
+  const firstPart = getRandomNumber();
+  const secondPart = getRandomNumber();
+  const randomOperator = operators[getRandomNumber(0, operators.length)];
+  const question = `${firstPart} ${randomOperator} ${secondPart}`;
+  const correctAnswer = String(randomOperation(firstPart, secondPart, randomOperator));
+  return [question, correctAnswer];
 };
 
-getData(roundCount);
-
-const startGameCalc = () => launchGameLogic(gameDescription, data);
+const startGameCalc = () => {
+  const rounds = [];
+  for (let i = 0; i <= roundCount; i += 1) {
+    rounds.push(makeRounds());
+  }
+  launchGameLogic(gameDescription, rounds);
+};
 
 export default startGameCalc;

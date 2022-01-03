@@ -8,8 +8,7 @@ export const launchGameLogic = (gameDescription, data) => {
   console.log(`Hello ,${userName}!`);
   console.log(gameDescription);
   for (let i = 0; i <= roundCount; i += 1) {
-    const question = data[i][0];
-    const correctAnswer = data[i][1];
+    const [question, correctAnswer] = data[i];
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== correctAnswer.toString()) {

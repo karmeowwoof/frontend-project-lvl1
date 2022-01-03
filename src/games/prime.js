@@ -3,8 +3,6 @@ import { launchGameLogic, roundCount } from '../index.js';
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const data = [];
-
 const isNumberPrime = (number) => {
   if (number < 2) {
     return false;
@@ -17,17 +15,18 @@ const isNumberPrime = (number) => {
   return true;
 };
 
-const getData = () => {
-  for (let i = 0; i <= roundCount; i += 1) {
-    const question = getRandomNumber();
-    const correctAnswer = isNumberPrime(question) ? 'yes' : 'no';
-    data.push([question, correctAnswer]);
-  }
-  return data;
+const makeRounds = () => {
+  const question = getRandomNumber();
+  const correctAnswer = isNumberPrime(question) ? 'yes' : 'no';
+  return [question, correctAnswer];
 };
 
-getData(roundCount);
-
-const startGamePrime = () => launchGameLogic(gameDescription, data);
+const startGamePrime = () => {
+  const rounds = [];
+  for (let i = 0; i <= roundCount; i += 1) {
+    rounds.push(makeRounds());
+  }
+  launchGameLogic(gameDescription, rounds);
+};
 
 export default startGamePrime;

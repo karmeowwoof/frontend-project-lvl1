@@ -3,8 +3,6 @@ import { launchGameLogic, roundCount } from '../index.js';
 
 const gameDescription = 'What number is missing in the progression?';
 
-const data = [];
-
 const minCount = 0;
 const maxCount = 10;
 
@@ -25,22 +23,23 @@ const replaceElement = (progression, hiddenIndex) => {
   return newProgression.join(' ');
 };
 
-const getData = () => {
-  for (let i = 0; i <= roundCount; i += 1) {
-    const startNumber = getRandomNumber();
-    const hiddenIndex = getRandomNumber(minCount, maxCount);
-    const difference = getRandomNumber(minCount, maxCount);
-    const progression = createProgression(startNumber, difference);
-    const question = replaceElement(progression, hiddenIndex);
-    const extractedReplaceElement = startNumber + (difference * hiddenIndex);
-    const correctAnswer = String(extractedReplaceElement);
-    data.push([question, correctAnswer]);
-  }
-  return data;
+const makeRounds = () => {
+  const startNumber = getRandomNumber();
+  const hiddenIndex = getRandomNumber(minCount, maxCount);
+  const difference = getRandomNumber(minCount, maxCount);
+  const progression = createProgression(startNumber, difference);
+  const question = replaceElement(progression, hiddenIndex);
+  const extractedReplaceElement = startNumber + (difference * hiddenIndex);
+  const correctAnswer = String(extractedReplaceElement);
+  return [question, correctAnswer];
 };
 
-getData(roundCount);
-
-const startGameProgression = () => launchGameLogic(gameDescription, data);
+const startGameProgression = () => {
+  const rounds = [];
+  for (let i = 0; i <= roundCount; i += 1) {
+    rounds.push(makeRounds());
+  }
+  launchGameLogic(gameDescription, rounds);
+};
 
 export default startGameProgression;
