@@ -6,8 +6,8 @@ const gameDescription = 'What number is missing in the progression?';
 const minCount = 0;
 const maxCount = 10;
 
-//Предыдущий комментарий на эту тему:
-//https://github.com/karmeowwoof/frontend-project-lvl1/blob/817f43def25bb4495d702049ca667a6d65667568/src/games/games-progression.js#L25-L26 Тут также магические числа. Потому лучше их заменить.
+// Предыдущий комментарий на эту тему:
+// https://github.com/karmeowwoof/frontend-project-lvl1/blob/817f43def25bb4495d702049ca667a6d65667568/src/games/games-progression.js#L25-L26 Тут также магические числа. Потому лучше их заменить.
 
 const arithmeticProgressionLength = 10;
 
@@ -19,19 +19,12 @@ const createProgression = (number, difference) => {
   return progression;
 };
 
-const replaceElement = (progression, hiddenIndex) => {
-  const newProgression = progression;
-  const newHiddenIndex = hiddenIndex;
-  newProgression[newHiddenIndex] = '..';
-  return newProgression.join(' ');
-};
-
 const makeRounds = () => {
   const startNumber = getRandomNumber();
   const hiddenIndex = getRandomNumber(minCount, maxCount);
   const difference = getRandomNumber(minCount, maxCount);
   const progression = createProgression(startNumber, difference);
-  progression[hiddenIndex] = '..'; 
+  progression[hiddenIndex] = '..';
   const question = progression.join(' ');
   const extractedReplaceElement = startNumber + (difference * hiddenIndex);
   const correctAnswer = String(extractedReplaceElement);
