@@ -6,10 +6,12 @@ const gameDescription = 'What number is missing in the progression?';
 const minCount = 0;
 const maxCount = 10;
 
-// Предыдущий комментарий на эту тему:
-// https://github.com/karmeowwoof/frontend-project-lvl1/blob/817f43def25bb4495d702049ca667a6d65667568/src/games/games-progression.js#L25-L26 Тут также магические числа. Потому лучше их заменить.
-// Еще возник вопрос по поводу переписывания логики игр: после исправления в каждой игре возникли схожие блоки кода (code climate недоволен). Принцип разделения ответственности соблюдается, но
-// принцип DRY - нет.Так и должно быть? 
+/* Предыдущий комментарий на эту тему:
+ https://github.com/karmeowwoof/frontend-project-lvl1/blob/817f43def25bb4495d702049ca667a6d65667568/src/games/games-progression.js#L25-L26 Тут также магические числа. Потому лучше их заменить.
+ Еще возник вопрос по поводу переписывания логики игр: после исправления в каждой игре возникли
+ схожие блоки кода (code climate недоволен).
+ Принцип разделения ответственности соблюдается, но
+ принцип DRY - нет.Так и должно быть? */
 
 const arithmeticProgressionLength = 10;
 
