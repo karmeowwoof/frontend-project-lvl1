@@ -18,10 +18,9 @@ const makeRounds = () => {
   const hiddenIndex = getRandomNumber(0, 10);
   const difference = getRandomNumber(0, 10);
   const progression = createProgression(startNumber, difference);
+  const correctAnswer = progression[hiddenIndex];
   progression[hiddenIndex] = '..';
   const question = progression.join(' ');
-  const extractedReplaceElement = startNumber + (difference * hiddenIndex);
-  const correctAnswer = String(extractedReplaceElement);
   return [question, correctAnswer];
 };
 

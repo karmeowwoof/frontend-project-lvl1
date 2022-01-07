@@ -2,6 +2,7 @@ import getRandomNumber from '../randomNumber.js';
 import { launchGameLogic, roundCount } from '../index.js';
 
 const gameDescription = 'What is the result of the expression?';
+const operators = ['+', '-', '*'];
 
 const randomOperation = (num1, num2, operator) => {
   switch (operator) {
@@ -15,8 +16,6 @@ const randomOperation = (num1, num2, operator) => {
       throw new Error(`operation ${operator} is not supported`);
   }
 };
-
-const operators = ['+', '-', '*'];
 
 const makeRounds = () => {
   const firstPart = getRandomNumber();
