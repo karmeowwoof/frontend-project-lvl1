@@ -13,7 +13,7 @@ const createProgression = (number, difference) => {
   return progression;
 };
 
-const makeRounds = () => {
+const makeRound = () => {
   const startNumber = getRandomNumber();
   const hiddenIndex = getRandomNumber(0, 10);
   const difference = getRandomNumber(0, 10);
@@ -27,7 +27,7 @@ const makeRounds = () => {
 const startGameProgression = () => {
   const rounds = [];
   for (let i = 0; i <= roundsCount; i += 1) {
-    rounds.push(makeRounds());
+    rounds.push(makeRound());
   }
   launchGameLogic(gameDescription, rounds);
 };

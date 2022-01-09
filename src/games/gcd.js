@@ -10,7 +10,7 @@ const calcGcd = (num1, num2) => {
   return calcGcd(num2, num1 % num2);
 };
 
-const makeRounds = () => {
+const makeRound = () => {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
   const question = `${firstNumber} ${secondNumber}`;
@@ -21,7 +21,7 @@ const makeRounds = () => {
 const startGameGcd = () => {
   const rounds = [];
   for (let i = 0; i <= roundsCount; i += 1) {
-    rounds.push(makeRounds());
+    rounds.push(makeRound());
   }
   launchGameLogic(gameDescription, rounds);
 };

@@ -15,7 +15,7 @@ const isNumberPrime = (number) => {
   return true;
 };
 
-const makeRounds = () => {
+const makeRound = () => {
   const question = getRandomNumber();
   const correctAnswer = isNumberPrime(question) ? 'yes' : 'no';
   return [question, correctAnswer];
@@ -24,7 +24,7 @@ const makeRounds = () => {
 const startGamePrime = () => {
   const rounds = [];
   for (let i = 0; i <= roundsCount; i += 1) {
-    rounds.push(makeRounds());
+    rounds.push(makeRound());
   }
   launchGameLogic(gameDescription, rounds);
 };

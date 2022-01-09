@@ -17,7 +17,7 @@ const randomOperation = (num1, num2, operator) => {
   }
 };
 
-const makeRounds = () => {
+const makeRound = () => {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
   const randomOperator = operators[getRandomNumber(0, operators.length)];
@@ -29,7 +29,7 @@ const makeRounds = () => {
 const startGameCalc = () => {
   const rounds = [];
   for (let i = 0; i <= roundsCount; i += 1) {
-    rounds.push(makeRounds());
+    rounds.push(makeRound());
   }
   launchGameLogic(gameDescription, rounds);
 };
