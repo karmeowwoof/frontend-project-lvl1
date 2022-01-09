@@ -1,5 +1,5 @@
 import getRandomNumber from '../randomNumber.js';
-import { launchGameLogic, roundCount } from '../index.js';
+import { launchGameLogic, roundsCount } from '../index.js';
 
 const gameDescription = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
@@ -18,17 +18,17 @@ const randomOperation = (num1, num2, operator) => {
 };
 
 const makeRounds = () => {
-  const firstPart = getRandomNumber();
-  const secondPart = getRandomNumber();
+  const firstNumber = getRandomNumber();
+  const secondNumber = getRandomNumber();
   const randomOperator = operators[getRandomNumber(0, operators.length)];
-  const question = `${firstPart} ${randomOperator} ${secondPart}`;
-  const correctAnswer = String(randomOperation(firstPart, secondPart, randomOperator));
+  const question = `${firstNumber} ${randomOperator} ${secondNumber}`;
+  const correctAnswer = String(randomOperation(firstNumber, secondNumber, randomOperator));
   return [question, correctAnswer];
 };
 
 const startGameCalc = () => {
   const rounds = [];
-  for (let i = 0; i <= roundCount; i += 1) {
+  for (let i = 0; i <= roundsCount; i += 1) {
     rounds.push(makeRounds());
   }
   launchGameLogic(gameDescription, rounds);
